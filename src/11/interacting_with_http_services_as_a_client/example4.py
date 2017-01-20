@@ -2,12 +2,12 @@
 
 import requests
 
-resp = requests.head('http://www.python.org/index.html')
+resp = requests.head('https://www.python.org')
 
 status = resp.status_code
-last_modified =	resp.headers['last-modified']
-content_type = resp.headers['content-type']
-content_length = resp.headers['content-length']
+last_modified = resp.headers.get('last-modified')
+content_type = resp.headers.get('content-type')
+content_length = resp.headers.get('content-length')
 
 print(status)
 print(last_modified)

@@ -16,10 +16,7 @@ headers = {
     'Spam' : 'Eggs'
 }
 
-resp = requests.post(url, data=parms, headers=headers)
-
-# Decoded text returned by the request
-text = resp.text
+resp = requests.post(url, data=parms, headers=headers).json()
 
 from pprint import pprint
-pprint(resp.json)
+pprint(resp)
